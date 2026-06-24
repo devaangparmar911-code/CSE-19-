@@ -1,43 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Prime Number Checker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Peaks</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Prime Number Checker</h2>
+    <!-- Navigation -->
+    <nav>
+        <h2>🏔 Adventure Peaks</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <label>Enter a Number:</label>
-    <input type="number" id="num">
-    <button onclick="checkPrime()">Check</button>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Discover the Beauty of Nature</h1>
+        <p>Travel beyond limits and experience unforgettable adventures.</p>
+        <button onclick="showMessage()">Start Your Journey</button>
+    </section>
 
-    <p id="result"></p>
+    <!-- About -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Adventure Peaks helps travelers explore beautiful mountains,
+            valleys, forests, and thrilling outdoor activities. Our mission
+            is to inspire people to connect with nature and create lifelong memories.
+        </p>
+    </section>
 
-    <script>
-        function checkPrime() {
-            let num = parseInt(document.getElementById("num").value);
-            let prime = true;
+    <!-- Destinations -->
+    <section id="destinations">
+        <h2>Top Destinations</h2>
 
-            if (num <= 1) {
-                prime = false;
-            } else {
-                for (let i = 2; i < num; i++) {
-                    if (num % i === 0) {
-                        prime = false;
-                        break;
-                    }
-                }
-            }
+        <div class="cards">
+            <div class="card" onclick="showPlace('Himalayas')">
+                <h3>🏔 Himalayas</h3>
+                <p>Enjoy breathtaking snowy peaks and trekking adventures.</p>
+            </div>
 
-            if (prime) {
-                document.getElementById("result").innerHTML =
-                    num + " is a Prime Number.";
-            } else {
-                document.getElementById("result").innerHTML =
-                    num + " is Not a Prime Number.";
-            }
-        }
-    </script>
+            <div class="card" onclick="showPlace('Spiti Valley')">
+                <h3>🏜 Spiti Valley</h3>
+                <p>Perfect for camping, biking, and stunning landscapes.</p>
+            </div>
+
+            <div class="card" onclick="showPlace('Manali')">
+                <h3>🌲 Manali</h3>
+                <p>Famous for paragliding, rafting, and scenic beauty.</p>
+            </div>
+
+            <div class="card" onclick="showPlace('Valley of Flowers')">
+                <h3>🌸 Valley of Flowers</h3>
+                <p>A colorful paradise filled with rare flowers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities">
+        <h2>Adventure Activities</h2>
+
+        <div class="cards">
+            <div class="card" onclick="showPlace('Trekking')">🥾 Trekking</div>
+            <div class="card" onclick="showPlace('Camping')">🏕 Camping</div>
+            <div class="card" onclick="showPlace('Rock Climbing')">🧗 Rock Climbing</div>
+            <div class="card" onclick="showPlace('River Rafting')">🚣 River Rafting</div>
+            <div class="card" onclick="showPlace('Mountain Biking')">🚵 Mountain Biking</div>
+            <div class="card" onclick="showPlace('Paragliding')">🪂 Paragliding</div>
+        </div>
+    </section>
+
+    <!-- Information Box -->
+    <div id="info-box">
+        Click on any destination or activity to learn more.
+    </div>
+
+    <!-- Testimonials -->
+    <section id="reviews">
+        <h2>Traveler Reviews</h2>
+
+        <div class="cards">
+            <div class="card">
+                ⭐⭐⭐⭐⭐
+                <p>"One of the best adventure trips I've ever experienced!"</p>
+            </div>
+
+            <div class="card">
+                ⭐⭐⭐⭐⭐
+                <p>"Amazing locations and unforgettable memories."</p>
+            </div>
+
+            <div class="card">
+                ⭐⭐⭐⭐☆
+                <p>"Perfect destination for nature and adventure lovers."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Write your message..." rows="5"></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Back to Top -->
+    <button onclick="window.scrollTo(0,0)">
+        ↑ Back to Top
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Adventure Peaks | Explore • Travel • Adventure</p>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
